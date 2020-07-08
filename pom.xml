@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project >
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project Information -->
+    <groupId>moonshot</groupId>
+    <artifactId>alphaleafmvndemo</artifactId>
+    <version>1.0.0</version>
+
+    <!-- Project Properties -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+
+    <!-- Project Dependencies -->
+    <dependencies>
+
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
+
+
+    </dependencies>
+
+</project>
+
