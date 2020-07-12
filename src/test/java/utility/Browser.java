@@ -16,7 +16,6 @@ public class Browser {
         driver = new ChromeDriver();
     }
 
-
     public static void open(String browserType) {
         if(browserType.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
@@ -41,7 +40,6 @@ public class Browser {
         }
         return driver;
     }
-
 
     public static void close() {
         if(isFirefox) {

@@ -9,11 +9,6 @@ public class TrelloPractice {
 
     public static void main(String[] args) {
 
-        Faker faker = new Faker();
-        String fakeCardNumber = faker.business().creditCardNumber();  // method, object creation changes
-        System.out.println(fakeCardNumber);
-
-
         Browser.open();    // Chrome browser being open
 
         UIActions i = new UIActions();
