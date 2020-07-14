@@ -10,13 +10,15 @@ import utility.UIActions;
 // Test Class; test case container
 public class AuthenticationTest {
 
-    @Test
+    @Test(enabled = false)
     public void PBTW_T10() {
-        // Test Data
+        // ========== Test Data ============== //
         Faker fakeData = new Faker();
         String emailAddress = fakeData.internet().emailAddress();
         String passwordPhrase = fakeData.internet().password();
+        String expected = "There isn't an account for this email";
 
+        // ========== Test Steps ============== //
         // Open a browser
         Browser.open();
         UIActions i = new UIActions();
@@ -47,23 +49,52 @@ public class AuthenticationTest {
 
         // Extract that Error message
         By error_text = By.cssSelector("div#error > p");    // By: location
-        String erroMessageFromUI = i.element(error_text).getText();
+        String actual = i.element(error_text).getText();
         Browser.close();
 
-
-        String expected = "There isn't an account for this email";
-        boolean comparisonResult = erroMessageFromUI.equalsIgnoreCase(expected);
-
-
-        Assert.assertTrue(comparisonResult);
+        //=========== Test Assertions =============//
+        Assert.assertEquals(actual, expected);
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void PBTW_T11() {
 
         Browser.open();
+        UIActions i = new UIActions();
+
+        i.gotoSite("https://trello.com");
+        i.maximizeWindow();
+        i.waitfor(1);
+
+        // click sign up button
+        By signUp_button =  By.linkText("Sign Up");
+        i.click(signUp_button);
+        i.waitfor(1);
+
+        // provide an email address
+        By email_input = By.id("email");
+        i.write(email_input, "nijat@alphaleaftech.com");
+        i.waitfor(1);
+
+        // click continue button
+        By continue_button = By.id("signup-submit");
+        i.click(continue_button);
+        i.waitfor(1);
+
+        // Sign Up button exist
+        By signup_blue_button = By.cssSelector("button#signup-submit");
+        boolean isDisplayedOrNot = i.element(signup_blue_button).isDisplayed();
         Browser.close();
+
+
+        Assert.assertTrue(isDisplayedOrNot);
+
     }
 
 }
+
+
+// 1.  Create a TEST CLASS: class with ~Test postfix
+// 2.  Create a method:     public void methodName()
+// 3.  Label your method with @Test
