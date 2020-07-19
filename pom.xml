@@ -50,6 +50,12 @@
                 <version>3.0.0-M1</version>
                 <configuration>
                     <suiteXmlFiles>testng.xml</suiteXmlFiles>
+                    <properties>
+                        <property>
+                            <name>testnames</name>
+                            <value>${testof}</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>

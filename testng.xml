@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Alphaleaf moonshot test suit">
-    <test name="smoke">
+
+    <test name="SmokeVerification">
         <classes>
             <class name="tests.OptionsDemoTest"/>
-            <class name="tests.OptionsDemoTwoTest"/>
         </classes>
     </test>
+
+
+    <test name="RegVerification">
+        <packages>
+            <package name="tests"/>
+        </packages>
+    </test>
+
+
+    <test name="IntyTest">
+        <classes>
+            <class name="tests.ModuleOneTest">
+                <methods>
+                    <include name="testCase3"/>
+                    <include name="testCase4"/>
+                </methods>
+            </class>
+
+            <class name="tests.OptionsDemoTwoTest">
+                <methods>
+                    <exclude name="test20"/>
+                    <exclude name="test23"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite>

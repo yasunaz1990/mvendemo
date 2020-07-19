@@ -7,7 +7,7 @@ public class OptionsDemoTest {
 
     @Test
     public void test1() {
-        System.out.println("Test1 code haha");
+        System.out.println("Test1 code");
     }
 
     @Test
@@ -20,22 +20,22 @@ public class OptionsDemoTest {
         System.out.println("Test3 code");
     }
 
-    @Test
+   // @Test
     public void test4() {
         System.out.println("Test4 code");
     }
 
-    @Test
+    //@Test
     public void test5() {
         System.out.println("Test5 code");
     }
 
-    @Test
+    //@Test
     public void test6() {
         System.out.println("Test6 code haha");
     }
 
-    @Test
+    //@Test
     public void test7() {
         System.out.println("Test7 code");
     }
