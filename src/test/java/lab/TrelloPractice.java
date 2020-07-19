@@ -16,7 +16,7 @@ public class TrelloPractice {
         i.waitfor(3);
 
         // By:  represent element location information on DOM
-     //   By login_button = By.xpath("//a[text()='Log In']");
+        //   By login_button = By.xpath("//a[text()='Log In']");
         By login_button = By.linkText("Log In");
         i.click(login_button);
         i.waitfor(5);

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Project Information -->
@@ -16,8 +15,6 @@
 
     <!-- Project Dependencies -->
     <dependencies>
-
-
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
@@ -42,7 +39,22 @@
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
         </dependency>
-
     </dependencies>
+
+    <!-- Configure Build -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                    <suiteXmlFiles>testng.xml</suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
+
+
 

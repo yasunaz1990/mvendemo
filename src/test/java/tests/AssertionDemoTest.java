@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+
+// Test Class: group reletaed test cases
 public class AssertionDemoTest {
 
     @Test
@@ -51,9 +53,11 @@ public class AssertionDemoTest {
     public void multiAssertionHardAssert() {
         // Hard Assert  --> Static methods
         // two nums
-        Assert.assertEquals(120, 10);
+        Assert.assertEquals(10, 10);
+        System.out.println("code below first assert");
         // two stirng values
-        Assert.assertEquals("Word", "Word");
+        Assert.assertEquals("Worlds", "Word");
+        System.out.println("code below 2nd assert");
         // false
         Assert.assertFalse(true);
     }
@@ -62,9 +66,16 @@ public class AssertionDemoTest {
     public void multiAssertSoftAssert() {
         // Soft Assert
         SoftAssert sAssert = new SoftAssert();
+
         sAssert.assertEquals(120, 10);
-        sAssert.assertEquals("Word", "World");
+        System.out.println("code X");
+
+        sAssert.assertEquals("Worlds", "World");
+        System.out.println("code Y");
+
         sAssert.assertFalse(true);
+        System.out.println("code Z");
+
         sAssert.assertAll();
     }
 

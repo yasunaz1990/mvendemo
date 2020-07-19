@@ -16,7 +16,7 @@ public class AuthenticationTest {
         Faker fakeData = new Faker();
         String emailAddress = fakeData.internet().emailAddress();
         String passwordPhrase = fakeData.internet().password();
-        String expected = "There isn't an account for this email";
+        String expected = "There isn't an account for this email hahahahah";
 
         // ========== Test Steps ============== //
         // Open a browser
