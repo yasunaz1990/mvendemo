@@ -1,8 +1,8 @@
-package tests;
+package tests.regression;
 
 import org.testng.annotations.Test;
 
-public class OptionsDemoTwoTest {
+public class OptionDemoTwoTest {
 
     @Test
     public void test20() {

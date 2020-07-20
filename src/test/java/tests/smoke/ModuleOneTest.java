@@ -1,4 +1,4 @@
-package tests;
+package tests.smoke;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
