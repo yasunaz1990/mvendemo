@@ -7,10 +7,9 @@ package testcases;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import utility.Browser;
+import utility.Step;
 import utility.UIActions;
 
 public class TrelloAuthenticationTest {
@@ -23,7 +22,6 @@ public class TrelloAuthenticationTest {
         String email    = "nmuhtaraedvfcadsf@gmailc.om";
         String password = "password123!";
         String expected = "There is not an account for the email you have provided.";
-
 
         //--- Test Step ---//
         Browser.open();
