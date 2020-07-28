@@ -8,34 +8,13 @@
     </listeners>
 
 
-    <!--     Test Contexts    -->
     <test name="smoke">
         <classes>
             <class name="testcases.TrelloAuthenticationTest"/>
-            <class name="testcases.PaymentTest">
-                <methods>
-                    <include name="validate_card"/>
-                    <exclude name="invalid_card"/>
-                </methods>
-            </class>
         </classes>
     </test>
 
-    <test name="regression">
-        <classes>
-            <class name="testcases.TrelloAuthenticationTest"/>
-            <class name="testcases.PaymentTest"/>
-        </classes>
-    </test>
 
-    <test name="end2end">
-        <packages>
-            <package name="testcases"/>
-        </packages>
-        <classes>
-            <class name="testcases.TrelloAuthenticationTest"/>
-        </classes>
-    </test>
 
 </suite>
 
