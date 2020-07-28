@@ -16,8 +16,9 @@ import utility.UIActions;
 
 public class TrelloAuthenticationTest {
 
+
     @Test
-    public void shortVersion() {
+    public void test_case_1() {
         // Test Data
         String expected = "There isn't an account for this email";
 
@@ -38,68 +39,21 @@ public class TrelloAuthenticationTest {
 
 
     @Test
-    public void invalid_credential__displays_warning() {
+    public void test_case() {
         // Test Data
-        Faker data = new Faker();
-        String url = "https://trello.com/";
-        String email = data.internet().emailAddress();
-        String password = data.internet().password();
-        String expected = "There isn't an account for this email";
-
-        // Test Steps
-        Browser.open();
-        UIActions i= new UIActions();
-        i.gotoSite(url);
-        i.click("Log In");
-        i.waitfor(1);
-        By email_input = By.cssSelector("input#user");
-        i.write(email_input, email);
-        i.waitfor(1);
-        By pass_input = By.cssSelector("input#password");
-        i.write(pass_input, password);
-
-        By login_button = By.cssSelector("input#login");
-        i.click(login_button);
-        i.waitfor(2);
-
-        By error_message = By.cssSelector("div#error > .error-message");
-        String actual = i.element(error_message).getText();
-        Browser.close();
-
-        // Assertions
-        Assert.assertEquals(actual, expected);
-    }
-
-
-    @Test
-    public void invalid_credential_password_reset() {
-        // Test Data
-        Faker data = new Faker();
-        String url = "https://trello.com/";
-        String email = data.internet().emailAddress();
-        String pass = data.internet().password();
         String expected = "There wasn't an account for that email";
 
         // Test Steps
         Browser.open();
-        UIActions i= new UIActions();
-        i.gotoSite(url);
-        i.click("Log In");
-        i.waitfor(1);
+        LandingPage landingPage = new LandingPage();
+        landingPage.open();
+        landingPage.clickLoginLink();
 
-        By forgot_link = By.linkText("Can't log in?");
-        i.click(forgot_link);
-        i.waitfor(1);
+        LoginPage loginPage = new LoginPage();
+        loginPage.clickCantLoginLink();
+        loginPage.recoverPassword();
+        String actual = loginPage.extractErrorMessage();
 
-        By recovery_email_input = By.cssSelector("input#email");
-        i.write(recovery_email_input, email);
-        i.waitfor(1);
-
-        By recover_button = By.cssSelector("input#submit");
-        i.click(recover_button);
-
-        By error_message = By.cssSelector("div#error > .error-message");
-        String actual = i.element(error_message).getText();
         Browser.close();
 
         // Assertion
@@ -127,7 +81,7 @@ public class TrelloAuthenticationTest {
         By sso_login_link = By.linkText("Log in with SSO");
         i.click(sso_login_link);
         i.waitfor(1);
-        By email_input = By.cssSelector("input#user");
+        By email_input = By.cssSelector("custom_inpu#user");
         i.write(email_input, email);
         i.waitfor(2);
 

@@ -12,6 +12,9 @@ public class LoginPage extends UIActions {
     private By pass_input = By.cssSelector("input#password");
     private By login_button = By.cssSelector("input#login");
     private By error_message = By.cssSelector("div#error > .error-message");
+    private By forgot_link = By.linkText("Can't log in?");
+    private By recovery_email_input = By.cssSelector("input#email");
+    private  By recover_button = By.cssSelector("input#submit");
 
     // Methods -- User's action
     public void doInvalidLogin() {
@@ -23,6 +26,19 @@ public class LoginPage extends UIActions {
         write(pass_input, password);
         waitfor(1);
         click(login_button);
+    }
+
+    public void clickCantLoginLink() {
+        click(forgot_link);
+        waitfor(1);
+    }
+
+    public void recoverPassword() {
+        Faker data = new Faker();
+        String email = data.internet().emailAddress();
+        write(recovery_email_input, email);
+        waitfor(1);
+        click(recover_button);
     }
 
     public String extractErrorMessage() {
