@@ -1,23 +1,23 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import utility.UIActions;
 
 public class LandingPage extends UIActions {
 
-    // Fields -- Elements
-    private By login_link = By.linkText("Log In");
+    //------ELEMENTS-------//
+    private By enter_button = xpath("//div[@id='div_slideshow']//button");
 
 
-
-    // Methods -- User's action
+    //------METHODS-------//
     public void open() {
-        gotoSite("https://trello.com/");
+        gotoSite("https://ailab.acr.org/");
+        maximizeWindow();
     }
 
-
-    public void clickLoginLink() {
-        click(login_link);
+    public void gotoHomePage() {
+        click(enter_button);
     }
 }
 

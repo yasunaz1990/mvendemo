@@ -10,7 +10,7 @@
 
     <test name="smoke">
         <classes>
-            <class name="testcases.TrelloAuthenticationTest"/>
+
         </classes>
     </test>
 
