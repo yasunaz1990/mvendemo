@@ -29,7 +29,7 @@ public class SmokeTest {
     }
 
 
-    @Test
+    //@Test
     public void verify_learn_page_is_accessible() {
         // Test Data
         // Test Steps
@@ -51,7 +51,7 @@ public class SmokeTest {
 
 
 
-    @Test
+    //@Test
     public void verify_annoation() {
         Browser.open();
         LandingPage landingPage = new LandingPage();
