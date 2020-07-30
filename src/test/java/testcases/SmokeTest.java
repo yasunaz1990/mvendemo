@@ -2,10 +2,7 @@ package testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AnnotatePage;
-import pages.HomePage;
-import pages.LandingPage;
-import pages.LearnPage;
+import pages.*;
 import utility.Browser;
 
 public class SmokeTest {
@@ -29,7 +26,7 @@ public class SmokeTest {
     }
 
 
-    //@Test
+    @Test
     public void verify_learn_page_is_accessible() {
         // Test Data
         // Test Steps
@@ -51,7 +48,7 @@ public class SmokeTest {
 
 
 
-    //@Test
+    @Test
     public void verify_annoation() {
         Browser.open();
         LandingPage landingPage = new LandingPage();
@@ -63,6 +60,32 @@ public class SmokeTest {
 
         AnnotatePage annotatePage = new AnnotatePage();
         annotatePage.doAnnotations();
+        boolean actual = annotatePage.isConfirmationMessageDispalyed();
+        Browser.close();
+
+        // Test Assertion
+        Assert.assertTrue(actual);
+    }
+
+
+    @Test
+    public void verify_run_inference() {
+        // Test Data
+        // Test Steps
+        Browser.open();
+        LandingPage landingPage = new LandingPage();
+        landingPage.open();
+        landingPage.gotoHomePage();
+
+        HomePage homePage = new HomePage();
+        homePage.gotoRunPage();
+
+        RunPage runPage = new RunPage();
+        boolean actual = runPage.runPrediction();
+        Browser.close();
+
+        // Test Assertion
+        Assert.assertTrue(actual);
     }
 
 }
