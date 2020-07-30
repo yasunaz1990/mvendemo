@@ -88,4 +88,24 @@ public class SmokeTest {
         Assert.assertTrue(actual);
     }
 
+
+    @Test
+    public void verify_pnumonia_evaluation() {
+        // Test Data
+        // Test Steps
+        Browser.open();
+        LandingPage landingPage = new LandingPage();
+        landingPage.open();
+        landingPage.gotoHomePage();
+
+        HomePage homePage = new HomePage();
+        homePage.gotoEvaluationPage();
+
+        EvaluationPage evaluate = new EvaluationPage();
+        boolean actual = evaluate.doEvaluateModel();
+        Browser.close();
+
+        // Test Assertion
+        Assert.assertTrue(actual);
+    }
 }
