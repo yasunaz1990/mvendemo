@@ -7,14 +7,11 @@
         <listener class-name="utility.TestListener"/>
     </listeners>
 
-
     <test name="smoke">
         <classes>
-
+            <class name="testcases.SmokeTest"/>
         </classes>
     </test>
-
-
 
 </suite>
 
