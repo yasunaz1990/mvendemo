@@ -12,7 +12,7 @@ import utility.Browser;
 public class SmokeTest {
 
 
-    @Test(enabled = false)
+    @Test
     public void verify_homepage() {
         // Test Data
         System.out.printf("Hey Jenkins fam, test is indeed running");
