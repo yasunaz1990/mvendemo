@@ -108,4 +108,28 @@ public class SmokeTest {
         // Test Assertion
         Assert.assertTrue(actual);
     }
+
+
+    @Test
+    public void verify_model_training() {
+        // Test Data
+        // Test Steps
+        Browser.open();
+        LandingPage landing = new LandingPage();
+        landing.open();
+        landing.gotoHomePage();
+
+        HomePage home = new HomePage();
+        home.gotoCreatePage();
+
+        CreatePage create = new CreatePage();
+        create.prepareData();
+        create.configureModel();
+        create.initiateTrainAndTest();
+        boolean actual = create.verifyAccuracyOverview();
+        Browser.close();
+
+        // Test Assertion
+        Assert.assertTrue(actual);
+    }
 }
