@@ -1,7 +1,11 @@
 package testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+//import pages.*;
+import org.testng.asserts.SoftAssert;
 import pages.*;
 import utility.Browser;
 
@@ -11,26 +15,23 @@ public class SmokeTest {
     @Test
     public void verify_homepage() {
         // Test Data
+        System.out.printf("Hey Jenkins fam, test is indeed running");
         // Test Steps
         Browser.open();
-        LandingPage landingPage = new LandingPage();
-        landingPage.open();
-        landingPage.gotoHomePage();
-
-        HomePage homePage = new HomePage();
-        boolean actual = homePage.isDisplayed();
+        boolean actual = new LandingPage()
+                .open()
+                .gotoHomePage()
+                .isDisplayed();
         Browser.close();
-
         // Test Assertion
-        Assert.assertTrue(actual, "Home page is not displayed, investigate");
+        Assert.assertTrue(actual);
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void verify_learn_page_is_accessible() {
         // Test Data
         // Test Steps
-        Browser.open();
         LandingPage landingPage = new LandingPage();
         landingPage.open();
         landingPage.gotoHomePage();
@@ -40,7 +41,6 @@ public class SmokeTest {
 
         LearnPage learnPage = new LearnPage();
         boolean actual = learnPage.isPageDisplayed();
-        Browser.close();
 
         // Test Assertion
         Assert.assertTrue(actual);
@@ -48,7 +48,7 @@ public class SmokeTest {
 
 
 
-    @Test
+    @Test(enabled = false)
     public void verify_annoation() {
         Browser.open();
         LandingPage landingPage = new LandingPage();
@@ -68,7 +68,7 @@ public class SmokeTest {
     }
 
 
-    @Test
+
     public void verify_run_inference() {
         // Test Data
         // Test Steps
@@ -89,7 +89,6 @@ public class SmokeTest {
     }
 
 
-    @Test
     public void verify_pnumonia_evaluation() {
         // Test Data
         // Test Steps
@@ -110,6 +109,7 @@ public class SmokeTest {
     }
 
 
+    // Lamees
     @Test
     public void verify_model_training() {
         // Test Data
@@ -132,4 +132,5 @@ public class SmokeTest {
         // Test Assertion
         Assert.assertTrue(actual);
     }
+
 }

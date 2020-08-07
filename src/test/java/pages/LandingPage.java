@@ -10,13 +10,15 @@ public class LandingPage extends UIActions {
 
 
     //------METHODS-------//
-    public void open() {
+    public LandingPage open() {
         gotoSite("https://ailab.acr.org/");
         maximizeWindow();
+        return this;
     }
 
-    public void gotoHomePage() {
+    public HomePage gotoHomePage() {
         click(enter_button);
+        return new HomePage();
     }
 }
 

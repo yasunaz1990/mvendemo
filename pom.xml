@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <modelVersion>4.0.0</modelVersion>
-
     <!-- Project Information -->
     <groupId>moonshot</groupId>
     <artifactId>alphaleafmvndemo</artifactId>
@@ -49,6 +48,8 @@
     </dependencies>
 
     <!-- Configure Build -->
+    <!-- Let the Surefire Plugin know that
+         testng.xml file exist -->
     <build>
         <plugins>
             <plugin>
@@ -62,6 +63,10 @@
         </plugins>
     </build>
 </project>
+
+
+
+
 
 
 
