@@ -68,7 +68,7 @@ public class SmokeTest {
     }
 
 
-
+    @Test(enabled = false)
     public void verify_run_inference() {
         // Test Data
         // Test Steps
@@ -89,6 +89,7 @@ public class SmokeTest {
     }
 
 
+    @Test(enabled = false)
     public void verify_pnumonia_evaluation() {
         // Test Data
         // Test Steps

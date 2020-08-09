@@ -12,7 +12,6 @@
             <class name="testcases.SmokeTest"/>
         </classes>
     </test>
-
 </suite>
 
 
