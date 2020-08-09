@@ -111,7 +111,7 @@ public class SmokeTest {
 
 
     // Lamees
-    @Test
+    @Test(enabled = false)
     public void verify_model_training() {
         // Test Data
         // Test Steps
