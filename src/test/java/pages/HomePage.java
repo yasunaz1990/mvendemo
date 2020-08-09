@@ -10,7 +10,7 @@ public class HomePage extends UIActions {
     private By annoate_tab = css("li:nth-of-type(4) > .nav-button-wrapper > .site-menu-title");
     private By run_tab = xpath("//span[text()='Run']");
     private By evaluation_tab = xpath("//span[text()='Evaluate']");
-
+    private By create_tab = xpath("//span[text()='Create']");
 
 
     //------METHODS-------//
@@ -33,5 +33,9 @@ public class HomePage extends UIActions {
 
     public void gotoEvaluationPage() {
         click(evaluation_tab);
+    }
+
+    public void gotoCreatePage() {
+        click(create_tab);
     }
 }

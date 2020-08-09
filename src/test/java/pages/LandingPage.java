@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import utility.UIActions;
 
 public class LandingPage extends UIActions {
-
     //------ELEMENTS-------//
     private By enter_button = xpath("//div[@id='div_slideshow']//button");
 

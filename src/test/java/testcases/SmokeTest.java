@@ -110,22 +110,28 @@ public class SmokeTest {
     }
 
 
-    @Test(enabled = false)
-    public void verify_create_model() {
-       // Test Data
+    // Lamees
+    @Test
+    public void verify_model_training() {
+        // Test Data
         // Test Steps
-        // Assertion
-        SoftAssert sAssert = new SoftAssert();
-        sAssert.assertEquals(110, 10);
-        sAssert.assertEquals(10, 10);
-        sAssert.assertEquals("word", "world");
-        sAssert.assertAll();
-    }
+        Browser.open();
+        LandingPage landing = new LandingPage();
+        landing.open();
+        landing.gotoHomePage();
 
+        HomePage home = new HomePage();
+        home.gotoCreatePage();
 
-    @Test(enabled = false)
-    public void verify_create_model_e2e() {
-        //..your test code here
+        CreatePage create = new CreatePage();
+        create.prepareData();
+        create.configureModel();
+        create.initiateTrainAndTest();
+        boolean actual = create.verifyAccuracyOverview();
+        Browser.close();
+
+        // Test Assertion
+        Assert.assertTrue(actual);
     }
 
 }
