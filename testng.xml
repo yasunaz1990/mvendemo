@@ -8,6 +8,7 @@
     </listeners>
 
     <!-- List of Test Contect -->
+    <!-- some other comment -->
     <test name="smoke">
         <classes>
             <class name="testcases.SmokeTest"/>
